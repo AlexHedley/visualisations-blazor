@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://samwho.dev/big-o/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="format-detection" content="telephone=no">
+  </head><body><a rel="me" href="https://octodon.social/@samwho"></a>
+  <a rel="me" href="https://hachyderm.io/@samwho"></a>
+
+  <title>Big O</title>
+
+  <link rel="stylesheet" href="./Big O_files/reset.css" async="">
+  <link rel="stylesheet" href="./Big O_files/monokai.css" async="">
+  <link rel="stylesheet" href="./Big O_files/main.css" async="">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://samwho.dev/rss.xml">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@samwhoo">
+  
+  <meta name="twitter:image" content="https://samwho.dev/images/big-o.png?h=360758a0c2f7997bbed5">
+  <meta property="og:image" content="https://samwho.dev/images/big-o.png?h=360758a0c2f7997bbed5">
+  
+  
+  <meta name="twitter:description" content="A visual introduction to big O notation.">
+  <meta property="og:description" content="A visual introduction to big O notation.">
+  <meta name="description" content="A visual introduction to big O notation.">
+  
+  <meta name="twitter:title" content="Big O">
+  <meta property="og:title" content="Big O">
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:published_date" content="2025-08-23">
+  <meta property="og:author" content="Sam Rose">
+  
+
+
+  
+
+  
+
+  
+  <script src="./Big O_files/index.js.download"></script>
+  
+
+  
+
+  
+  <link rel="stylesheet" href="./Big O_files/big-o.css">
+  
+
+  
+
+  
+  
+
+
+
+  
+  <div class="bar" role="presentation">
+    <div class="segment"></div>
+    <div class="segment"></div>
+    <div class="segment"></div>
+    <div class="segment"></div>
+    <div class="segment"></div>
+  </div>
+  
+
+  
+
+<article class="post">
+    <main id="content" class="content">
+        <p><s-hero role="heading" aria-level="1" aria-label="Big O Notation" id="element-2"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" width="748" height="421" viewBox="0 0 748 421">
+        <path class="growth-line constant-line" stroke-width="4.4879999999999995" d="M -37.4 412.58 L -12.466666666666669 412.58 L 12.466666666666663 412.58 L 37.4 412.58 L 62.33333333333333 412.58 L 87.26666666666665 412.58 L 112.20000000000002 412.58 L 137.13333333333335 412.58 L 162.06666666666666 412.58 L 187 412.58 L 211.93333333333334 412.58 L 236.86666666666665 412.58 L 261.8 412.58 L 286.73333333333335 412.58 L 311.6666666666667 412.58 L 336.6 412.58 L 361.53333333333336 412.58 L 386.46666666666664 412.58 L 411.4 412.58 L 436.33333333333326 412.58 L 461.2666666666666 412.58 L 486.19999999999993 412.58 L 511.13333333333327 412.58 L 536.0666666666667 412.58 L 561 412.58 L 585.9333333333333 412.58 L 610.8666666666667 412.58 L 635.8 412.58 L 660.7333333333333 412.58 L 685.6666666666666 412.58 L 710.6 412.58" data-function="constant" style="stroke-dasharray: 748; stroke-dashoffset: 747; opacity: 1;"></path>
+<path class="growth-line log-line" stroke-width="4.4879999999999995" d="M -37.4 421.45135541838897 L -12.466666666666669 415.43451065109235 L 12.466666666666663 409.8190969183042 L 37.4 404.55488286047586 L 62.33333333333333 399.6005127585448 L 87.26666666666665 394.9215312913098 L 112.20000000000002 390.4889289318373 L 137.13333333333335 386.27805151945074 L 162.06666666666666 382.26776979455553 L 187 378.4398378972926 L 211.93333333333334 374.77839147196653 L 236.86666666666665 371.2695504350387 L 261.8 367.90110126056527 L 286.73333333333335 364.6622404148648 L 311.6666666666667 361.5433653393794 L 336.6 358.53590278428436 L 361.53333333333336 355.6321667590919 L 386.46666666666664 352.8252401725607 L 411.4 350.10887557378646 L 436.33333333333326 347.47741141074084 L 461.2666666666666 344.92570098323415 L 486.19999999999993 342.44905184886426 L 511.13333333333327 340.04317388907475 L 536.0666666666667 337.70413459125893 L 561 335.4283203761961 L 585.9333333333333 333.2124030158733 L 610.8666666666667 331.0533103582303 L 635.8 328.9482007125341 L 660.7333333333333 326.8944403594799 L 685.6666666666666 324.88958373946883 L 710.6 322.93135594523756" data-function="log" style="stroke-dasharray: 755.209; stroke-dashoffset: 754.209; opacity: 1;"></path>
+<path class="growth-line linear-line" stroke-width="4.4879999999999995" d="M -37.4 421 L -12.466666666666669 415.38666666666666 L 12.466666666666663 409.7733333333333 L 37.4 404.16 L 62.33333333333333 398.5466666666667 L 87.26666666666665 392.93333333333334 L 112.20000000000002 387.32 L 137.13333333333335 381.70666666666665 L 162.06666666666666 376.09333333333336 L 187 370.48 L 211.93333333333334 364.8666666666667 L 236.86666666666665 359.25333333333333 L 261.8 353.64 L 286.73333333333335 348.02666666666664 L 311.6666666666667 342.4133333333333 L 336.6 336.8 L 361.53333333333336 331.18666666666667 L 386.46666666666664 325.5733333333333 L 411.4 319.96000000000004 L 436.33333333333326 314.3466666666667 L 461.2666666666666 308.73333333333335 L 486.19999999999993 303.12 L 511.13333333333327 297.50666666666666 L 536.0666666666667 291.8933333333333 L 561 286.28 L 585.9333333333333 280.66666666666663 L 610.8666666666667 275.05333333333334 L 635.8 269.44 L 660.7333333333333 263.82666666666665 L 685.6666666666666 258.2133333333333 L 710.6 252.6" data-function="linear" style="stroke-dasharray: 766.722; stroke-dashoffset: 765.722; opacity: 1;"></path>
+<path class="growth-line n-log-n-line" stroke-width="4.4879999999999995" d="M -37.4 411.6928644581611 L -12.466666666666669 412.48484964496356 L 12.466666666666663 412.4879698972768 L 37.4 411.77748828604757 L 62.33333333333333 410.4167521264241 L 87.26666666666665 408.45969063463895 L 112.20000000000002 405.9526786795512 L 137.13333333333335 402.9359522237986 L 162.06666666666666 399.4447002443074 L 187 395.50991894864626 L 211.93333333333334 391.159088500781 L 236.86666666666665 386.41671527552455 L 261.8 381.30477088239564 L 286.73333333333335 375.8430509847297 L 311.6666666666667 370.0494711161495 L 336.6 363.94031250585596 L 361.53333333333336 357.53042786712217 L 386.46666666666664 350.8334148449794 L 411.4 343.8617631311651 L 436.33333333333326 336.62697997919764 L 461.2666666666666 329.1396978793221 L 486.19999999999993 321.4097674035235 L 511.13333333333327 313.44633764840216 L 536.0666666666667 305.2579262474711 L 561 296.8524805642942 L 585.9333333333333 288.23743139153487 L 610.8666666666667 279.41974025177615 L 635.8 270.405941211308 L 660.7333333333333 261.20217796841456 L 685.6666666666666 251.81423685569288 L 710.6 242.24757629595135" data-function="n-log-n" style="stroke-dasharray: 771.875; stroke-dashoffset: 770.875; opacity: 1;"></path>
+<path class="growth-line quadratic-line" stroke-width="4.4879999999999995" d="M -37.4 411.738 L -12.466666666666669 412.48644444444443 L 12.466666666666663 412.48644444444443 L 37.4 411.738 L 62.33333333333333 410.24111111111114 L 87.26666666666665 407.9957777777778 L 112.20000000000002 405.002 L 137.13333333333335 401.2597777777778 L 162.06666666666666 396.7691111111111 L 187 391.53 L 211.93333333333334 385.54244444444447 L 236.86666666666665 378.8064444444444 L 261.8 371.322 L 286.73333333333335 363.0891111111111 L 311.6666666666667 354.10777777777776 L 336.6 344.378 L 361.53333333333336 333.8997777777778 L 386.46666666666664 322.6731111111111 L 411.4 310.69800000000004 L 436.33333333333326 297.9744444444445 L 461.2666666666666 284.50244444444445 L 486.19999999999993 270.28200000000004 L 511.13333333333327 255.31311111111114 L 536.0666666666667 239.59577777777776 L 561 223.13 L 585.9333333333333 205.9157777777778 L 610.8666666666667 187.9531111111111 L 635.8 169.24200000000002 L 660.7333333333333 149.78244444444442 L 685.6666666666666 129.57444444444445 L 710.6 108.618" data-function="quadratic" style="stroke-dasharray: 827.013; stroke-dashoffset: 826.013; opacity: 1;"></path>
+<path class="growth-line cubic-line" stroke-width="4.4879999999999995" d="M -37.4 412.6642 L -12.466666666666669 412.5831185185185 L 12.466666666666663 412.5768814814815 L 37.4 412.4958 L 62.33333333333333 412.1901851851852 L 87.26666666666665 411.5103481481481 L 112.20000000000002 410.3066 L 137.13333333333335 408.42925185185186 L 162.06666666666666 405.7286148148148 L 187 402.055 L 211.93333333333334 397.2587185185185 L 236.86666666666665 391.19008148148146 L 261.8 383.69939999999997 L 286.73333333333335 374.63698518518515 L 311.6666666666667 363.85314814814814 L 336.6 351.1982 L 361.53333333333336 336.5224518518519 L 386.46666666666664 319.67621481481484 L 411.4 300.50980000000004 L 436.33333333333326 278.87351851851855 L 461.2666666666666 254.61768148148153 L 486.19999999999993 227.59260000000006 L 511.13333333333327 197.64858518518525 L 536.0666666666667 164.63594814814815 L 561 128.40499999999997 L 585.9333333333333 88.80605185185186 L 610.8666666666667 45.689414814814825" data-function="cubic" style="stroke-dasharray: 799.625; stroke-dashoffset: 798.625; opacity: 1;"></path>
+
+        <text x="74.8" y="233.875 233.875 233.875 233.875" class="big-text" style="--font-size: 93.5px">
+            <tspan dy="20" opacity="0">B<animate attributeName="dy" from="20" to="0" dur="0.3s" begin="0s" fill="freeze"></animate><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0s" fill="freeze"></animate></tspan>
+            <tspan dy="20" opacity="0">i<animate attributeName="dy" from="20" to="0" dur="0.3s" begin="0.18s" fill="freeze"></animate><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.18s" fill="freeze"></animate></tspan>
+            <tspan dy="20" opacity="0">g<animate attributeName="dy" from="20" to="0" dur="0.3s" begin="0.36s" fill="freeze"></animate><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.36s" fill="freeze"></animate></tspan>
+        </text>
+
+        <defs>
+          <clippath id="o-clip">
+            <path id="o-clip-path" d="M 277.36998748779297 198.85418701171875 L 277.36998748779297 125.81675720214844 A 73.03742980957031 73.03742980957031 0 1 0 277.4147961105015 125.81677094724368 Z"></path>
+          </clippath>
+        </defs>
+        <text x="238.425" y="233.875" class="o-text" font-size="93.5" style="opacity: 1; clip-path: none;">O</text>
+      </svg></s-hero></p>
+<p>Big O notation is a way of describing the performance of a function without
+using time. Rather than timing a function from start to finish, big O describes
+how the time grows as the input size increases. It is used to help understand
+how programs will perform across a range of inputs.</p>
+<p>In this post I'm going to cover 4 frequently-used categories of big O notation:
+<strong>constant</strong>, <strong>logarithmic</strong>, <strong>linear</strong>, and <strong>quadratic</strong>. Don't worry if
+these words mean nothing to you right now. I'm going to talk about them in
+detail, as well as visualise them, throughout this post.</p>
+<s-dog name="doe" class="dog left"><blockquote role="complementary" aria-label="An aside styled as a speech bubble coming from a dog."><img src="./Big O_files/default.svg" alt="A picture of a cartoon husky called &quot;Doe&quot;" draggable="false" style="cursor: grab; width: 100px; height: 180px; min-width: 100px;"><p>
+  Before you scroll! This post has been sponsored by the wonderful folks at <a href="https://ittybit.com/?ref=sam">ittybit</a>, and their API for working
+  with videos, images, and audio. If you need to store, encode, or get
+  intelligence from the media files in your app, check them out!
+</p></blockquote></s-dog>
+<h2 id="iterating"><a class="anchor" href="https://samwho.dev/big-o/#iterating">#</a>
+Iterating</h2>
+<p>Consider this JavaScript function that calculates the sum of 1 to n.</p>
+<pre data-lang="typescript" class="language-typescript z-code"><code class="language-typescript" data-lang="typescript"><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-storage z-type z-function z-ts">function</span> <span class="z-meta z-definition z-function z-ts"><span class="z-entity z-name z-function z-ts">sum</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">n</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">let</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-readwrite z-ts">total</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-constant z-numeric z-decimal z-ts">0</span></span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-loop z-ts">for</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">let</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-readwrite z-ts">i</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-constant z-numeric z-decimal z-ts">1</span></span><span class="z-punctuation z-terminator z-statement z-ts">;</span> <span class="z-variable z-other z-readwrite z-ts">i</span> <span class="z-keyword z-operator z-relational z-ts">&lt;=</span> <span class="z-variable z-other z-readwrite z-ts">n</span><span class="z-punctuation z-terminator z-statement z-ts">;</span> <span class="z-variable z-other z-readwrite z-ts">i</span><span class="z-keyword z-operator z-increment z-ts">++</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">    <span class="z-variable z-other z-readwrite z-ts">total</span> <span class="z-keyword z-operator z-assignment z-compound z-ts">+=</span> <span class="z-variable z-other z-readwrite z-ts">i</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-variable z-other z-readwrite z-ts">total</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></code></pre>
+<p>I'm going to pass in 1 billion, written using the shorthand <code>1e9</code>, so it takes a
+noticeable amount of time to run. Press the <h- key="run" class="inline-button-icon"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" role="presentation">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg></h-> button below to
+measure how long it takes to calculate the sum of 1 to 1 billion.</p>
+<s-code-timer title="sum(1e9)" id="element-3" role="figure" aria-label="Timing how long it takes sum(1e9) to run"><div class="timer-title">sum(1e9)</div><div class="timer-controls"><button class="run-button"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg></button><div role="timer" aria-atomic="true" class="timer-display">00:00.000</div></div></s-code-timer>
+<p>On my laptop this takes just under 1 second. The time you get may be different,
+and it may vary by a few tens of milliseconds each time you run it. This is
+expected.</p>
+<p>Timing code this way, by taking the start time and the end time and finding the
+difference, is called <b>wall-clock time</b>.</p>
+<p>How long do you think 2 billion, <code>2e9</code>, will take?</p>
+<s-code-timer title="sum(2e9)" id="element-4" role="figure" aria-label="Timing how long it takes sum(2e9) to run"><div class="timer-title">sum(2e9)</div><div class="timer-controls"><button class="run-button"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg></button><div role="timer" aria-atomic="true" class="timer-display">00:00.000</div></div></s-code-timer>
+<p>It takes about twice as long. The code loops <code>n</code> times and does a single
+addition each time. If we passed in 3 billion, we would expect the execution
+time to increase by a factor of three.</p>
+<s-dog position="right" name="sage" mode="proud" class="dog right"><blockquote role="complementary" aria-label="An aside styled as a speech bubble coming from a dog."><img src="./Big O_files/proud.svg" alt="A picture of an old husky dog, with a proud facial expression" draggable="false" style="cursor: grab; width: 100px; height: 180px; min-width: 100px;"><p>
+  The relationship between a function's input and how long it takes to execute
+  is called its <b>time complexity</b>, and <b>big O notation</b> is how we
+  communicate what the time complexity of a function is.
+</p></blockquote></s-dog>
+<p>Play around with the buttons below. Each bar adds an extra 1 billion to the <code>n</code>
+that we pass to <code>sum</code>, so the <h- key="run" class="inline-button-icon"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" role="presentation">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg><span>1e9</span></h-> button calls <code>sum(1e9)</code>,
+the <h- key="run" class="inline-button-icon"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" role="presentation">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg><span>2e9</span></h-> button calls <code>sum(2e9)</code>, and so on. You should see
+<code>2e9</code> take about twice as long as <code>1e9</code>, and <code>3e9</code> take about three times as
+long as <code>1e9</code>.</p>
+<s-code-timer-bar-graph id="element-7" role="figure" aria-label="A bar graph with buttons underneath each bar, clicking each button will time the execution of that bar&#39;s function.">
+  
+  
+  
+  
+  
+  
+<div class="chart-container"><div class="bar-container"><div class="bar-value-container"><div role="timer" aria-atomic="true" class="bar-value"></div></div><button class="run-button"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg>1e9</button></div><div class="bar-container"><div class="bar-value-container"><div role="timer" aria-atomic="true" class="bar-value"></div></div><button class="run-button"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg>2e9</button></div><div class="bar-container"><div class="bar-value-container"><div role="timer" aria-atomic="true" class="bar-value"></div></div><button class="run-button"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg>3e9</button></div><div class="bar-container"><div class="bar-value-container"><div role="timer" aria-atomic="true" class="bar-value"></div></div><button class="run-button"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg>4e9</button></div><div class="bar-container"><div class="bar-value-container"><div role="timer" aria-atomic="true" class="bar-value"></div></div><button class="run-button"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg>5e9</button></div></div></s-code-timer-bar-graph>
+<aside role="note">
+  <small>
+    <b>Note</b>: On some browsers, you might experience bars taking a lot longer
+    than they should. I wasn't able to figure out why before publishing. If a
+    bar seems way off what you would expect, try re-running it.
+  </small>
+</aside>
+<p>Because <code>sum</code>'s wall-clock time grows at the same rate as <code>n</code>, e.g. <code>sum(20)</code>
+would take twice as long as <code>sum(10)</code>, we say that <code>sum</code> is a "linear"
+function. It has a big O of n, or <strong>O(n)</strong>.</p>
+<s-dog position="left" name="haskie" mode="confused" class="dog left"><blockquote role="complementary" aria-label="An aside styled as a speech bubble coming from a dog."><img src="./Big O_files/confused.svg" alt="A picture of a cartoon husky puppy called &quot;Haskie&quot; looking confused." draggable="false" style="cursor: grab; width: 100px; height: 180px; min-width: 100px;"><p>
+  Why do we use that syntax: <b>O(n)</b>? What is O? Why those brackets?
+</p></blockquote></s-dog>
+<p>The "O" stands for "order," short for "order of growth." Said out loud it would
+be: "the order of growth of the <code>sum</code> function is n." <strong>O(n)</strong> is a compact way
+to write that. The notation was created by the German mathematician Paul
+Bachmann in 1894.  Also, the "O" (letter) might look like a 0 (number) in some
+typefaces.  It is always the letter O.</p>
+<p>A different way to sum the numbers from 1 to n is to use the formula
+<code>(n*(n+1))/2</code>. Here's the result of this formula with the numbers from 1 to 5.
+In each case the result should be the same as doing, e.g. <code>1+2+3+4+5</code> for <code>n=5</code>.</p>
+<ul>
+<li><code>(1*2)/2 = 2/2  = 1</code></li>
+<li><code>(2*3)/2 = 6/2  = 3</code></li>
+<li><code>(3*4)/2 = 12/2 = 6</code></li>
+<li><code>(4*5)/2 = 20/2 = 10</code></li>
+<li><code>(5*6)/2 = 30/2 = 15</code></li>
+</ul>
+<p>Here's how <code>sum</code> would look if it used that formula instead of the loop we had
+before:</p>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-storage z-type z-function z-ts">function</span> <span class="z-meta z-definition z-function z-ts"><span class="z-entity z-name z-function z-ts">sum</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">n</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">n</span> <span class="z-keyword z-operator z-arithmetic z-ts">*</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">n</span> <span class="z-keyword z-operator z-arithmetic z-ts">+</span> <span class="z-constant z-numeric z-decimal z-ts">1</span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-keyword z-operator z-arithmetic z-ts">/</span> <span class="z-constant z-numeric z-decimal z-ts">2</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></code></pre>
+<p>How do you think the wall-clock time of this function changes as <code>n</code> increases?
+The next two examples <strong>differ by a factor of 100</strong>.</p>
+<s-code-timer title="sum(1e9)" id="element-5" role="figure" aria-label="Timing how long it takes sum(1e9) to run"><div class="timer-title">sum(1e9)</div><div class="timer-controls"><button class="run-button"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg></button><div role="timer" aria-atomic="true" class="timer-display">00:00.000</div></div></s-code-timer>
+<s-code-timer title="sum(100e9)" id="element-6" role="figure" aria-label="Timing how long it takes sum(100e9) to run"><div class="timer-title">sum(100e9)</div><div class="timer-controls"><button class="run-button"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg></button><div role="timer" aria-atomic="true" class="timer-display">00:00.000</div></div></s-code-timer>
+<p>This example isn't broken. Both of these functions take almost no time at
+all.  The variance in timing is caused by the browser, and the unpredictability
+of computers, not the <code>sum</code> function.  Running each example a few times, you
+should see that the wall-clock time hovers around the same value for both.</p>
+<p>We call functions like this, whose wall-clock time is about the same no matter
+what input you give it, <strong>constant</strong> or <strong>O(1)</strong>.</p>
+<s-dog position="left" name="haskie" mode="triumphant" class="dog left"><blockquote role="complementary" aria-label="An aside styled as a speech bubble coming from a dog."><img src="./Big O_files/triumphant.svg" alt="A picture of a husky dog called &quot;Haskie&quot;, looking triumphant" draggable="false" style="cursor: grab; width: 100px; height: 180px; min-width: 100px;"><p>
+  Wow, so we improved our sum function from <b>O(n)</b> to <b>O(1)</b>! It
+  always runs instantly now!
+</p></blockquote></s-dog>
+<p>We did! Though it is crucial to remember that <strong>O(1)</strong> doesn't <em>always</em> mean
+"instant." It means that <strong>the time taken doesn't increase with the size
+of the input.</strong> In the case of our new <code>sum</code> function, it's more or less
+instant. But it's possible for an <strong>O(1)</strong> algorithm to take several minutes or
+even hours, depending on what it does.</p>
+<p>It's also possible for an <strong>O(n)</strong> algorithm to be faster than an <strong>O(1)</strong>
+algorithm for some of its inputs. Eventually, though, the <strong>O(1)</strong> algorithm
+will outpace the <strong>O(n)</strong> algorithm as the input size grows. Play with the
+slider below to see an example of that.</p>
+<s-graph id="constantlinear" style="width: 100%; aspect-ratio: 2/1;" drawupto="0" role="figure" aria-label="A graph showing the lines: O(n), O(1)">
+  <legend position="top-left" role="none">
+  <axes>
+    <x tics="10" ticformat="tic.toFixed(0)" max="100">
+    <y tics="10" ticformat="tic.toFixed(0)" max="110">
+  </y></x></axes>
+  <lines>
+    <line label="O(n)" y="5 + x" role="none">
+    <line label="O(1)" y="20" role="none">
+  </line></line></lines>
+</legend><canvas width="748" height="374" style="width: 748px; height: 374px;"></canvas></s-graph>
+<input aria-label="A slider for controlling the graph lines" style="margin-bottom: 2rem;" type="range" value="0" min="0" max="100" step="any" oninput="
+    document.getElementById(&#39;constantlinear&#39;).setAttribute(&#39;drawupto&#39;, value)
+  ">
+
+<s-dog position="left" name="haskie" mode="confused" class="dog left"><blockquote role="complementary" aria-label="An aside styled as a speech bubble coming from a dog."><img src="./Big O_files/confused.svg" alt="A picture of a cartoon husky puppy called &quot;Haskie&quot; looking confused." draggable="false" style="cursor: grab; width: 100px; height: 180px; min-width: 100px;"><p>
+  The <b>O(1)</b> line is always at 20 in that graph, so why don't we say
+  <b>O(20)</b> instead?
+</p></blockquote></s-dog>
+<p>The purpose of big O notation is to describe the relationship between the input
+and the wall-clock time of a function. It isn't concerned with what that
+wall-clock time ends up being, only with how it grows.</p>
+<p>Big O describes growth in the smallest terms possible.  It would quickly get
+messy if the world had to figure out what number to put inside the brackets for
+every function, and have those numbers be correct relative to each other.
+Likewise, linear functions are always <strong>O(n)</strong> and never <strong>O(2n)</strong> or <strong>O(n +
+1)</strong>, because <strong>O(n)</strong> is the smallest linear term.</p>
+<h2 id="sorting"><a class="anchor" href="https://samwho.dev/big-o/#sorting">#</a>
+Sorting</h2>
+<p>Let's move away from <code>sum</code> and talk about a different algorithm: <b>bubble
+sort</b>.</p>
+<p>The idea behind bubble sort is that you loop over the input array and swap
+elements next to each other if they are not in the desired order. You do this
+until you're able to complete a loop through the array without making any swaps.
+It's called bubble sort because of the way numbers "bubble" up to their correct
+position.</p>
+<p>Below is a JavaScript implementation of this algorithm. We're going to sort
+these numbers in ascending order, so the desired result is 1, 2, 3, 4, 5.</p>
+<p>You can step through this code and watch the array get sorted using the
+controls. <h- key="step" class="inline-button-icon"><svg aria-label="Skip forward icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" role="presentation">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3 5v14a1 1 0 0 0 1.504 .864l12 -7a1 1 0 0 0 0 -1.728l-12 -7a1 1 0 0 0 -1.504 .864z"></path>
+      <path d="M20 4a1 1 0 0 1 .993 .883l.007 .117v14a1 1 0 0 1 -1.993 .117l-.007 -.117v-14a1 1 0 0 1 1 -1z"></path>
+    </svg></h-> steps forwards 1 line at a time, <h- key="stepback" class="inline-button-icon"><svg aria-label="Skip back icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" role="presentation">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M19.496 4.136l-12 7a1 1 0 0 0 0 1.728l12 7a1 1 0 0 0 1.504 -.864v-14a1 1 0 0 0 -1.504 -.864z"></path>
+      <path d="M4 4a1 1 0 0 1 .993 .883l.007 .117v14a1 1 0 0 1 -1.993 .117l-.007 -.117v-14a1 1 0 0 1 1 -1z"></path>
+    </svg></h-> steps backwards, <h- key="play" class="inline-button-icon"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" role="presentation">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg></h-> automatically
+advances forward 1 line every second, and <h- key="restart" class="inline-button-icon"><svg aria-label="Restart icon" viewBox="0 0 512 512" width="24" height="24" fill="currentColor" role="presentation">
+      <path d="M 485.51724137931035 220.68965517241378 Q 509.7931034482759 218.48275862068965 512 194.20689655172413 L 512 35.310344827586206 L 512 35.310344827586206 Q 509.7931034482759 11.03448275862069 485.51724137931035 8.827586206896552 Q 461.2413793103448 11.03448275862069 459.0344827586207 35.310344827586206 L 459.0344827586207 123.58620689655173 L 459.0344827586207 123.58620689655173 L 436.9655172413793 98.20689655172414 L 436.9655172413793 98.20689655172414 Q 402.7586206896552 56.275862068965516 354.2068965517241 33.10344827586207 Q 304.55172413793105 8.827586206896552 247.17241379310346 8.827586206896552 Q 177.6551724137931 9.931034482758621 122.48275862068965 43.03448275862069 Q 66.20689655172414 75.03448275862068 34.206896551724135 131.31034482758622 Q 1.103448275862069 186.48275862068965 0 256 Q 1.103448275862069 325.51724137931035 34.206896551724135 380.6896551724138 Q 66.20689655172414 436.9655172413793 122.48275862068965 468.9655172413793 Q 177.6551724137931 502.0689655172414 247.17241379310346 503.17241379310343 Q 332.13793103448273 502.0689655172414 395.0344827586207 453.51724137931035 Q 413.7931034482759 436.9655172413793 400.55172413793105 417.1034482758621 Q 384 398.3448275862069 364.13793103448273 411.58620689655174 Q 314.48275862068965 449.1034482758621 247.17241379310346 450.2068965517241 Q 164.41379310344828 448 110.34482758620689 392.82758620689657 Q 55.172413793103445 338.7586206896552 52.96551724137931 256 Q 55.172413793103445 173.24137931034483 110.34482758620689 119.17241379310344 Q 164.41379310344828 64 247.17241379310346 61.793103448275865 Q 292.41379310344826 61.793103448275865 331.0344827586207 80.55172413793103 Q 369.6551724137931 99.3103448275862 396.13793103448273 131.31034482758622 L 396.13793103448273 132.41379310344828 L 396.13793103448273 132.41379310344828 L 396.13793103448273 132.41379310344828 L 396.13793103448273 132.41379310344828 L 427.0344827586207 167.72413793103448 L 427.0344827586207 167.72413793103448 L 326.62068965517244 167.72413793103448 L 326.62068965517244 167.72413793103448 Q 302.3448275862069 169.93103448275863 300.13793103448273 194.20689655172413 Q 302.3448275862069 218.48275862068965 326.62068965517244 220.68965517241378 L 485.51724137931035 220.68965517241378 L 485.51724137931035 220.68965517241378 Z"></path>
+    </svg></h-> resets back to
+the start.</p>
+<s-array ref="a" debugger-id="bubble-sort-debugger" id="element-0" aria-label="An array visualisation, currently showing the value: 3, 2, 5, 4, 1" role="figure" style="--num-rows: 2; --top-row: 1; --item-row: 2;"><div role="presentation" class="grid" style="--num-items: 5;"><div role="presentation" class="label" data-name="a">a</div><div role="presentation" class="equals">=</div><div role="presentation" class="annotation top" data-name="i">i</div><div role="presentation" class="annotation top" data-name="i+1">
+    <span data-name="i">i</span>
+    <span class="z-keyword z-operator z-arithmetic z-ts">+</span>
+    <span class="z-constant z-numeric">1</span>
+  </div><div role="presentation" class="item" data-index="0" style="grid-column: 3; view-transition-name: element-0-3; background-color: var(--palette-dark-blue); color: white; font-weight: bold;">3</div><div role="presentation" class="item" data-index="1" style="grid-column: 4; view-transition-name: element-0-2; background-color: var(--palette-green); color: white; font-weight: bold;">2</div><div role="presentation" class="item" data-index="2" style="grid-column: 5; view-transition-name: element-0-5; background-color: var(--palette-pink); color: white; font-weight: bold;">5</div><div role="presentation" class="item" data-index="3" style="grid-column: 6; view-transition-name: element-0-4; background-color: var(--palette-red); color: white; font-weight: bold;">4</div><div role="presentation" class="item" data-index="4" style="grid-column: 7; view-transition-name: element-0-1; background-color: var(--palette-orange); color: white; font-weight: bold;">1</div></div></s-array>
+<div class="debugger-container">
+  <s-debugger-controls debugger-id="bubble-sort-debugger" id="element-1" class="controls"><div class="controls-left"><button aria-label="Reset" disabled="" class="control-button reset"><svg aria-label="Restart icon" viewBox="0 0 512 512" width="24" height="24" fill="currentColor">
+      <path d="M 485.51724137931035 220.68965517241378 Q 509.7931034482759 218.48275862068965 512 194.20689655172413 L 512 35.310344827586206 L 512 35.310344827586206 Q 509.7931034482759 11.03448275862069 485.51724137931035 8.827586206896552 Q 461.2413793103448 11.03448275862069 459.0344827586207 35.310344827586206 L 459.0344827586207 123.58620689655173 L 459.0344827586207 123.58620689655173 L 436.9655172413793 98.20689655172414 L 436.9655172413793 98.20689655172414 Q 402.7586206896552 56.275862068965516 354.2068965517241 33.10344827586207 Q 304.55172413793105 8.827586206896552 247.17241379310346 8.827586206896552 Q 177.6551724137931 9.931034482758621 122.48275862068965 43.03448275862069 Q 66.20689655172414 75.03448275862068 34.206896551724135 131.31034482758622 Q 1.103448275862069 186.48275862068965 0 256 Q 1.103448275862069 325.51724137931035 34.206896551724135 380.6896551724138 Q 66.20689655172414 436.9655172413793 122.48275862068965 468.9655172413793 Q 177.6551724137931 502.0689655172414 247.17241379310346 503.17241379310343 Q 332.13793103448273 502.0689655172414 395.0344827586207 453.51724137931035 Q 413.7931034482759 436.9655172413793 400.55172413793105 417.1034482758621 Q 384 398.3448275862069 364.13793103448273 411.58620689655174 Q 314.48275862068965 449.1034482758621 247.17241379310346 450.2068965517241 Q 164.41379310344828 448 110.34482758620689 392.82758620689657 Q 55.172413793103445 338.7586206896552 52.96551724137931 256 Q 55.172413793103445 173.24137931034483 110.34482758620689 119.17241379310344 Q 164.41379310344828 64 247.17241379310346 61.793103448275865 Q 292.41379310344826 61.793103448275865 331.0344827586207 80.55172413793103 Q 369.6551724137931 99.3103448275862 396.13793103448273 131.31034482758622 L 396.13793103448273 132.41379310344828 L 396.13793103448273 132.41379310344828 L 396.13793103448273 132.41379310344828 L 396.13793103448273 132.41379310344828 L 427.0344827586207 167.72413793103448 L 427.0344827586207 167.72413793103448 L 326.62068965517244 167.72413793103448 L 326.62068965517244 167.72413793103448 Q 302.3448275862069 169.93103448275863 300.13793103448273 194.20689655172413 Q 302.3448275862069 218.48275862068965 326.62068965517244 220.68965517241378 L 485.51724137931035 220.68965517241378 L 485.51724137931035 220.68965517241378 Z"></path>
+    </svg></button><select name="speed" aria-label="Play speed" class="speed-select"><option value="0.2">.2x</option><option value="0.5">.5x</option><option value="1">1x</option><option value="2">2x</option><option value="4">4x</option><option value="8">8x</option></select><button aria-label="Play" class="control-button continue"><svg aria-label="Play icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+    </svg></button></div><div class="controls-right"><button aria-label="Step back" disabled="" class="control-button step-back"><svg aria-label="Skip back icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M19.496 4.136l-12 7a1 1 0 0 0 0 1.728l12 7a1 1 0 0 0 1.504 -.864v-14a1 1 0 0 0 -1.504 -.864z"></path>
+      <path d="M4 4a1 1 0 0 1 .993 .883l.007 .117v14a1 1 0 0 1 -1.993 .117l-.007 -.117v-14a1 1 0 0 1 1 -1z"></path>
+    </svg></button><button aria-label="Step forward" class="control-button step"><svg aria-label="Skip forward icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3 5v14a1 1 0 0 0 1.504 .864l12 -7a1 1 0 0 0 0 -1.728l-12 -7a1 1 0 0 0 -1.504 .864z"></path>
+      <path d="M20 4a1 1 0 0 1 .993 .883l.007 .117v14a1 1 0 0 1 -1.993 .117l-.007 -.117v-14a1 1 0 0 1 1 -1z"></path>
+    </svg></button></div></s-debugger-controls>
+  <s-debugger id="bubble-sort-debugger"><pre><code><span class="line" data-line-num="1" data-identifiers="bubbleSort|-|a" data-expressions=""><span class="before" data-line-num="1"></span><span class="z-storage z-type z-ts">function</span> <span class="z-entity z-name z-function z-ts" data-name="bubbleSort" data-type="identifier">bubbleSort</span><span class="z-punctuation">(</span><span class="z-variable z-parameter z-ts" data-name="a" data-type="identifier">a</span><span class="z-punctuation">)</span> <span class="z-punctuation">{</span><span class="after" data-line-num="1"></span></span>
+<span class="line" data-line-num="2" data-identifiers="" data-expressions=""><span class="before" data-line-num="2"></span>  <span class="z-keyword z-control z-flow z-ts">while</span><span class="z-punctuation">(</span><span class="z-constant z-language z-boolean z-true" data-type="literal">true</span><span class="z-punctuation">)</span> <span class="z-punctuation">{</span><span class="after" data-line-num="2"></span></span>
+<span class="line" data-line-num="3" data-identifiers="swapped" data-expressions=""><span class="before" data-line-num="3"></span>    <span class="z-storage z-type z-ts">let</span> <span class="z-variable z-other z-readwrite z-ts" data-name="swapped" data-type="identifier">swapped</span> <span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-constant z-language z-boolean z-false" data-type="literal">false</span><span class="z-punctuation">;</span><span class="after" data-line-num="3"></span></span>
+<span class="line" data-line-num="4" data-identifiers="i|-|i|-|a|-|length|-|i" data-expressions="i &lt; a.length - 1|-|a.length - 1|-|a.length"><span class="before" data-line-num="4"></span>    <span class="z-keyword z-control z-flow z-ts">for</span> <span class="z-punctuation">(</span><span class="z-storage z-type z-ts">let</span> <span class="z-variable z-other z-readwrite z-ts" data-name="i" data-type="identifier">i</span> <span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-constant z-numeric" data-type="literal">0</span><span class="z-punctuation">;</span> <span class="z-expression" data-type="expression" data-expression="i &lt; a.length - 1"><span class="" data-name="i" data-type="identifier">i</span> <span class="z-keyword z-operator z-relational z-ts">&lt;</span> <span class="z-expression" data-type="expression" data-expression="a.length - 1"><span class="z-expression" data-type="expression" data-expression="a.length"><span class="" data-name="a" data-type="identifier">a</span><span class="z-punctuation">.</span><span class="" data-name="length" data-type="identifier">length</span></span> <span class="z-keyword z-operator z-arithmetic z-ts">-</span> <span class="z-constant z-numeric" data-type="literal">1</span></span></span><span class="z-punctuation">;</span> <span class="" data-name="i" data-type="identifier">i</span><span class="z-keyword z-operator z-assignment z-ts">++</span><span class="z-punctuation">)</span> <span class="z-punctuation">{</span><span class="after" data-line-num="4"></span></span>
+<span class="line" data-line-num="5" data-identifiers="a|-|i|-|a|-|i" data-expressions="a[i] &gt; a[i+1]|-|a[i]|-|a[i+1]|-|i+1"><span class="before" data-line-num="5"></span>      <span class="z-keyword z-control z-flow z-ts">if</span> <span class="z-punctuation">(</span><span class="z-expression" data-type="expression" data-expression="a[i] &gt; a[i+1]"><span class="z-expression" data-type="expression" data-expression="a[i]"><span class="" data-name="a" data-type="identifier">a</span><span class="z-punctuation">[</span><span class="" data-name="i" data-type="identifier">i</span><span class="z-punctuation">]</span></span> <span class="z-keyword z-operator z-relational z-ts">&gt;</span> <span class="z-expression" data-type="expression" data-expression="a[i+1]"><span class="" data-name="a" data-type="identifier">a</span><span class="z-punctuation">[</span><span class="z-expression" data-type="expression" data-expression="i+1"><span class="" data-name="i" data-type="identifier">i</span><span class="z-keyword z-operator z-arithmetic z-ts">+</span><span class="z-constant z-numeric" data-type="literal">1</span></span><span class="z-punctuation">]</span></span></span><span class="z-punctuation">)</span> <span class="z-punctuation">{</span><span class="after" data-line-num="5"></span></span>
+<span class="line" data-line-num="6" data-identifiers="a|-|i|-|a|-|i|-|a|-|i|-|a|-|i" data-expressions="a[i]|-|a[i+1]|-|i+1|-|[a[i+1], a[i]]|-|a[i+1]|-|i+1|-|a[i]"><span class="before" data-line-num="6"></span>        <span class="z-punctuation">[</span><span class="z-expression" data-type="expression" data-expression="a[i]"><span class="" data-name="a" data-type="identifier">a</span><span class="z-punctuation">[</span><span class="" data-name="i" data-type="identifier">i</span><span class="z-punctuation">]</span></span><span class="z-punctuation">,</span> <span class="z-expression" data-type="expression" data-expression="a[i+1]"><span class="" data-name="a" data-type="identifier">a</span><span class="z-punctuation">[</span><span class="z-expression" data-type="expression" data-expression="i+1"><span class="" data-name="i" data-type="identifier">i</span><span class="z-keyword z-operator z-arithmetic z-ts">+</span><span class="z-constant z-numeric" data-type="literal">1</span></span><span class="z-punctuation">]</span></span><span class="z-punctuation">]</span> <span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-punctuation"><span class="z-expression" data-type="expression" data-expression="[a[i+1], a[i]]">[</span><span class="z-expression" data-type="expression" data-expression="a[i+1]"><span class="" data-name="a" data-type="identifier">a</span><span class="z-punctuation">[</span><span class="z-expression" data-type="expression" data-expression="i+1"><span class="" data-name="i" data-type="identifier">i</span><span class="z-keyword z-operator z-arithmetic z-ts">+</span><span class="z-constant z-numeric" data-type="literal">1</span></span><span class="z-punctuation">]</span></span><span class="z-punctuation">,</span> <span class="z-expression" data-type="expression" data-expression="a[i]"><span class="" data-name="a" data-type="identifier">a</span><span class="z-punctuation">[</span><span class="" data-name="i" data-type="identifier">i</span><span class="z-punctuation">]</span></span><span class="z-punctuation">]</span></span><span class="z-punctuation">;</span><span class="after" data-line-num="6"></span></span>
+<span class="line" data-line-num="7" data-identifiers="swapped" data-expressions=""><span class="before" data-line-num="7"></span>        <span class="" data-name="swapped" data-type="identifier">swapped</span> <span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-constant z-language z-boolean z-true" data-type="literal">true</span><span class="z-punctuation">;</span><span class="after" data-line-num="7"></span></span>
+<span class="line" data-line-num="8" data-identifiers="" data-expressions=""><span class="before" data-line-num="8"></span>      <span class="z-punctuation">}</span><span class="after" data-line-num="8"></span></span>
+<span class="line" data-line-num="9" data-identifiers="" data-expressions=""><span class="before" data-line-num="9"></span>    <span class="z-punctuation">}</span><span class="after" data-line-num="9"></span></span>
+<span class="line" data-line-num="10" data-identifiers="swapped" data-expressions="!swapped"><span class="before" data-line-num="10"></span>    <span class="z-keyword z-control z-flow z-ts">if</span> <span class="z-punctuation">(</span><span class="z-punctuation"><span class="z-expression" data-type="expression" data-expression="!swapped">!</span><span class="" data-name="swapped" data-type="identifier">swapped</span></span><span class="z-punctuation">)</span> <span class="z-keyword z-control z-flow z-ts">break</span><span class="z-punctuation">;</span><span class="after" data-line-num="10"></span></span>
+<span class="line" data-line-num="11" data-identifiers="" data-expressions=""><span class="before" data-line-num="11"></span>  <span class="z-punctuation">}</span><span class="after" data-line-num="11"></span></span>
+<span class="line" data-line-num="12" data-identifiers="a" data-expressions=""><span class="before" data-line-num="12"></span>  <span class="z-keyword z-control z-flow z-ts">return</span> <span class="" data-name="a" data-type="identifier">a</span><span class="z-punctuation">;</span><span class="after" data-line-num="12"></span></span>
+<span class="line" data-line-num="13" data-identifiers="" data-expressions=""><span class="before" data-line-num="13"></span><span class="z-punctuation">}</span><span class="after" data-line-num="13"></span></span></code></pre></s-debugger>
+</div>
+<p>Now you've had a look at the algorithm in action, what do you think its big O
+is?</p>
+<p>If the array is already sorted, the algorithm loops through once, does no swaps,
+and exits. This would be <strong>O(n)</strong>. But if the array is in any other order,
+we need to loop through more than once. In the worst case, where the array is
+in reverse order, we would have to loop through <code>n</code> times in order to move the
+smallest element from the end to the start.</p>
+<p>Looping through the <code>n</code> elements of our array <code>n</code> times results in <code>n*n</code>
+operations, or <code>n^2</code>. That means <strong>bubble sort is an O(n^2) algorithm</strong>.
+Sometimes called <strong>quadratic.</strong></p>
+<p>Because it's common for an algorithm's performance to depend not just on the
+<em>size</em> of the input, but also its arrangement, <strong>big O notation, unless stated
+otherwise, describes the worst-case scenario</strong>. The same notation can also be
+used for best and average case, but worst case is the default.</p>
+<p>Below is another way to visualise bubble sort. It starts off with the array 5,
+4, 3, 2, 1 from top to bottom. The end state should be 1, 2, 3, 4, 5 top to
+bottom. Each <h- key="step" class="inline-button-icon"><svg aria-label="Skip forward icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" role="presentation">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3 5v14a1 1 0 0 0 1.504 .864l12 -7a1 1 0 0 0 0 -1.728l-12 -7a1 1 0 0 0 -1.504 .864z"></path>
+      <path d="M20 4a1 1 0 0 1 .993 .883l.007 .117v14a1 1 0 0 1 -1.993 .117l-.007 -.117v-14a1 1 0 0 1 1 -1z"></path>
+    </svg></h-> step forward represents a full loop through
+the array, potentially involving multiple swaps. Use <h- class="inline-button-icon">Best</h->,
+<h- class="inline-button-icon">Worst</h->, and <h- class="inline-button-icon">Rand</h-> to see different initial configurations.</p>
+<p><s-sort-grid array="5,4,3,2,1" id="element-8" role="figure" aria-label="A visualisation of the bubble sort algorithm, currently showing step 0 of 5, with the array being: 5, 4, 3, 2, 1"><svg role="presentation" viewBox="0 0 800 600" style="width: 100%; height: auto; aspect-ratio: 800 / 600;"><line x1="60" y1="0" x2="60" y2="600" stroke="black" stroke-width="3" opacity="0.2" stroke-dasharray="10,10"></line><line x1="196" y1="0" x2="196" y2="600" stroke="black" stroke-width="3" opacity="0.2" stroke-dasharray="10,10"></line><line x1="332" y1="0" x2="332" y2="600" stroke="black" stroke-width="3" opacity="0.2" stroke-dasharray="10,10"></line><line x1="468" y1="0" x2="468" y2="600" stroke="black" stroke-width="3" opacity="0.2" stroke-dasharray="10,10"></line><line x1="604" y1="0" x2="604" y2="600" stroke="black" stroke-width="3" opacity="0.2" stroke-dasharray="10,10"></line><line x1="740" y1="0" x2="740" y2="600" stroke="black" stroke-width="3" opacity="0.2" stroke-dasharray="10,10"></line><path d="M 60 50 L 196 550 L 332 550 L 468 550 L 604 550 L 740 550" stroke="var(--palette-orange)" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1063.166015625" stroke-dashoffset="1062.166015625"></path><circle cx="60" cy="50" r="50" fill="var(--palette-orange)" class="sort-circle"></circle><text x="60" y="53.75" text-anchor="middle" font-family="var(--code-font)" font-size="37.5" font-weight="bold" fill="white">5</text><path d="M 60 175 L 196 50 L 332 425 L 468 425 L 604 425 L 740 425" stroke="var(--palette-pink)" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="992.6184692382812" stroke-dashoffset="991.6184692382812"></path><circle cx="60" cy="175" r="50" fill="var(--palette-pink)" class="sort-circle"></circle><text x="60" y="178.75" text-anchor="middle" font-family="var(--code-font)" font-size="37.5" font-weight="bold" fill="white">4</text><path d="M 60 300 L 196 175 L 332 50 L 468 300 L 604 300 L 740 300" stroke="var(--palette-red)" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="927.035400390625" stroke-dashoffset="926.035400390625"></path><circle cx="60" cy="300" r="50" fill="var(--palette-red)" class="sort-circle"></circle><text x="60" y="303.75" text-anchor="middle" font-family="var(--code-font)" font-size="37.5" font-weight="bold" fill="white">3</text><path d="M 60 425 L 196 300 L 332 175 L 468 50 L 604 175 L 740 175" stroke="var(--palette-dark-blue)" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="875.8748168945312" stroke-dashoffset="874.8748168945312"></path><circle cx="60" cy="425" r="50" fill="var(--palette-dark-blue)" class="sort-circle"></circle><text x="60" y="428.75" text-anchor="middle" font-family="var(--code-font)" font-size="37.5" font-weight="bold" fill="white">2</text><path d="M 60 550 L 196 425 L 332 300 L 468 175 L 604 50 L 740 50" stroke="var(--palette-green)" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="875.8748168945312" stroke-dashoffset="874.8748168945312"></path><circle cx="60" cy="550" r="50" fill="var(--palette-green)" class="sort-circle"></circle><text x="60" y="553.75" text-anchor="middle" font-family="var(--code-font)" font-size="37.5" font-weight="bold" fill="white">1</text></svg><div class="controls"><div class="controls-left"><button aria-label="Best case">Best</button><button aria-label="Worst case">Worst</button><button aria-label="Random case">Rand</button></div><div class="controls-right"><button disabled="" aria-label="Step back"><svg aria-label="Skip back icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M19.496 4.136l-12 7a1 1 0 0 0 0 1.728l12 7a1 1 0 0 0 1.504 -.864v-14a1 1 0 0 0 -1.504 -.864z"></path>
+      <path d="M4 4a1 1 0 0 1 .993 .883l.007 .117v14a1 1 0 0 1 -1.993 .117l-.007 -.117v-14a1 1 0 0 1 1 -1z"></path>
+    </svg></button><button aria-label="Step forward"><svg aria-label="Skip forward icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3 5v14a1 1 0 0 0 1.504 .864l12 -7a1 1 0 0 0 0 -1.728l-12 -7a1 1 0 0 0 -1.504 .864z"></path>
+      <path d="M20 4a1 1 0 0 1 .993 .883l.007 .117v14a1 1 0 0 1 -1.993 .117l-.007 -.117v-14a1 1 0 0 1 1 -1z"></path>
+    </svg></button></div></div></s-sort-grid></p>
+<p>If you played around with <h- class="inline-button-icon">Rand</h-> a few times you'll have noticed that you
+do sometimes get only a couple of iterations. Despite this, bubble sort is still
+<strong>O(n^2)</strong> because in the worst case you'll have to iterate over the array
+<code>n</code> times.</p>
+<h2 id="searching"><a class="anchor" href="https://samwho.dev/big-o/#searching">#</a>
+Searching</h2>
+<p>The last algorithm I want to talk about is <strong>binary search</strong>.</p>
+<p>Let's start with a game. <b>Think of a number between 1 and 100.</b> I'm going
+to try and guess what it is. Use the buttons below to tell me if your number is
+higher or lower than my guess.</p>
+<p><s-higher-or-lower id="element-9"><div class="guess-counter">Guess #1</div><div class="title">Is your number...</div><div class="guess-number">50</div><div class="buttons"><button class="lower-button">Lower</button><button class="correct-button">Correct!</button><button class="higher-button">Higher</button></div></s-higher-or-lower></p>
+<p>What I'm doing is starting in the middle of the range, 50, and eliminating half
+of the possibilities with each guess. This is a <b>binary search</b>.</p>
+<p>Using this method it will never take more than 7 guesses to find your number.
+This is because we start with 100 possibilities and half of the possibilities
+are ruled out with each guess.</p>
+<p>The table below shows the guessing pattern for all numbers between 1 and 100,
+use the slider to choose a number.</p>
+<p><s-higher-or-lower-table id="element-10"><div class="slider-container"><label for="element-10-slider">Target: 2&nbsp;&nbsp;</label><input id="element-10-slider" type="range" min="1" step="1" max="100"></div><table><thead><tr><th>Guess #</th><th>Possibilities</th><th>I guess</th><th>You say</th></tr></thead><tbody><tr><td>1</td><td>100</td><td>50</td><td class="response lower">Lower</td></tr><tr><td>2</td><td>49</td><td>25</td><td class="response lower">Lower</td></tr><tr><td>3</td><td>24</td><td>12</td><td class="response lower">Lower</td></tr><tr><td>4</td><td>11</td><td>6</td><td class="response lower">Lower</td></tr><tr><td>5</td><td>5</td><td>3</td><td class="response lower">Lower</td></tr><tr><td>6</td><td>2</td><td>1</td><td class="response higher">Higher</td></tr><tr><td>7</td><td>1</td><td>2</td><td class="response correct">Correct</td></tr></tbody></table></s-higher-or-lower-table></p>
+<p>When it's possible to eliminate a fraction of possibilities with every step
+of an algorithm, we call it <b>logarithmic</b>. That means that binary search is
+an <strong>O(log n)</strong> algorithm.</p>
+<p>Below is a graph of the number of guesses I would need in order to figure out
+any number between 1 and 1000.</p>
+<s-graph id="guesses" style="width: 100%; aspect-ratio: 2/1;" drawupto="0" role="figure" aria-label="A graph showing the lines: Guesses">
+  <axes>
+    <x tics="100" ticformat="tic.toFixed(0)" label="Target number" max="1000">
+    <y tics="2" ticformat="tic.toFixed(0)" label="Max guesses needed" max="10">
+  </y></x></axes>
+  <lines>
+    <line label="Guesses" y="Math.ceil(Math.log(x) / Math.log(2))" role="none">
+  </line></lines>
+<canvas width="748" height="374" style="width: 748px; height: 374px;"></canvas></s-graph>
+<input aria-label="A slider for controlling the graph lines" style="margin-bottom: 2rem;" type="range" value="0" min="0" max="1000" step="any" oninput="
+    document.getElementById(&#39;guesses&#39;).setAttribute(&#39;drawupto&#39;, value)
+  ">
+
+<p>Every time the target number doubles, I need 1 extra guess to find it. If you
+were to pick a number between 1 and 1 billion, I would need 31 guesses at most
+to find it. Logarithmic growth is really slow! Below is a graph comparing it to
+<strong>O(n)</strong> and <strong>O(n^2)</strong>, which both grow much faster.</p>
+<s-graph id="graph2" style="width: 100%; aspect-ratio: 2/1;" drawupto="0" role="figure" aria-label="A graph showing the lines: O(n^2), O(n), O(log n)">
+  <legend position="top-left" role="none">
+  <axes>
+    <x tics="20" ticformat="tic.toFixed(0)" max="100">
+    <y tics="20" ticformat="tic.toFixed(0)" max="100">
+  </y></x></axes>
+  <lines>
+    <line label="O(n^2)" y="Math.pow(x, 2)" role="none">
+    <line label="O(n)" y="x" role="none">
+    <line label="O(log n)" y="Math.log(x) / Math.log(2)" role="none">
+  </line></line></line></lines>
+</legend><canvas width="748" height="374" style="width: 748px; height: 374px;"></canvas></s-graph>
+<input aria-label="A slider for controlling the graph lines" style="margin-bottom: 2rem;" type="range" value="0" min="0" max="100" step="any" oninput="
+    document.getElementById(&#39;graph2&#39;).setAttribute(&#39;drawupto&#39;, value)
+  ">
+
+<h2 id="putting-this-knowledge-to-work"><a class="anchor" href="https://samwho.dev/big-o/#putting-this-knowledge-to-work">#</a>
+Putting this knowledge to work</h2>
+<p>In the previous sections of this post I've described the difference between
+<strong>O(1)</strong>, <strong>O(log n)</strong>, <strong>O(n)</strong>, and <strong>O(n^2)</strong> algorithms. Let's have a look
+at some situations you might encounter while writing code and what you can do to
+improve your time complexity.</p>
+<h3 id="finding-an-item-in-a-list"><a class="anchor" href="https://samwho.dev/big-o/#finding-an-item-in-a-list">#</a>
+Finding an item in a list</h3>
+<p>Here's a function that checks if a list contains a specific item.</p>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-storage z-type z-function z-ts">function</span> <span class="z-meta z-definition z-function z-ts"><span class="z-entity z-name z-function z-ts">contains</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">items</span><span class="z-punctuation z-separator z-parameter z-ts">,</span> <span class="z-variable z-parameter z-ts">target</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-loop z-ts">for</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">item</span></span> </span></span><span class="z-keyword z-operator z-expression z-of z-ts">of</span> <span class="z-variable z-other z-readwrite z-ts">items</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">    <span class="z-keyword z-control z-conditional z-ts">if</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">item</span> <span class="z-keyword z-operator z-comparison z-ts">===</span> <span class="z-variable z-other z-readwrite z-ts">target</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">      <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-constant z-language z-boolean z-true z-ts">true</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">    <span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-constant z-language z-boolean z-false z-ts">false</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></code></pre>
+<p>If you're looking up items in the same list lots of times, you might want to
+consider using a data structure that allows for faster lookups, such as a
+<strong>Set</strong>. Modern browsers implement <code>Set</code> in a way that gives <strong>O(1)</strong>
+time complexity for lookups.</p>
+<p>However, don't do this:</p>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-storage z-type z-function z-ts">function</span> <span class="z-meta z-definition z-function z-ts"><span class="z-entity z-name z-function z-ts">contains</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">items</span><span class="z-punctuation z-separator z-parameter z-ts">,</span> <span class="z-variable z-parameter z-ts">target</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">itemSet</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-new z-expr z-ts"><span class="z-keyword z-operator z-new z-ts">new</span> <span class="z-entity z-name z-type z-ts">Set</span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">items</span><span class="z-meta z-brace z-round z-ts">)</span></span></span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">itemSet</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-dom z-ts">has</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">target</span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></code></pre>
+<p><em>Building</em> the <code>new Set(items)</code> is an <strong>O(n)</strong> operation! This is because the
+<code>Set</code> constructor loops over all items in the array to add them to the set. You
+need to weigh the cost of this upfront work against the potential savings from
+faster lookups.</p>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">items</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-new z-expr z-ts"><span class="z-keyword z-operator z-new z-ts">new</span> <span class="z-entity z-name z-type z-ts">Set</span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-string z-quoted z-double z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">"</span>apple<span class="z-punctuation z-definition z-string z-end z-ts">"</span></span><span class="z-punctuation z-separator z-comma z-ts">,</span> <span class="z-string z-quoted z-double z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">"</span>banana<span class="z-punctuation z-definition z-string z-end z-ts">"</span></span><span class="z-punctuation z-separator z-comma z-ts">,</span> <span class="z-string z-quoted z-double z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">"</span>cherry<span class="z-punctuation z-definition z-string z-end z-ts">"</span></span><span class="z-meta z-brace z-square z-ts">]</span></span><span class="z-meta z-brace z-round z-ts">)</span></span></span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span><span class="z-source z-ts"><span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">items</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-dom z-ts">has</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-string z-quoted z-double z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">"</span>banana<span class="z-punctuation z-definition z-string z-end z-ts">"</span></span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-comment z-line z-double-slash z-ts"><span class="z-punctuation z-definition z-comment z-ts">//</span></span><span class="z-comment z-line z-double-slash z-ts"> true, and O(1)!</span>
+</span></code></pre>
+<h3 id="loop-an-array-with-indexes"><a class="anchor" href="https://samwho.dev/big-o/#loop-an-array-with-indexes">#</a>
+Loop an array with indexes</h3>
+<p>The code below contains a common mistake I've seen dozens of times in production
+code.  Have a read and see if you can answer:</p>
+<ul>
+<li>What is the big O of this function?</li>
+<li>How could we improve it?</li>
+</ul>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-storage z-type z-function z-ts">function</span> <span class="z-meta z-definition z-function z-ts"><span class="z-entity z-name z-function z-ts">buildList</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">items</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">output</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span><span class="z-meta z-array z-literal z-ts"> <span class="z-meta z-brace z-square z-ts">[</span><span class="z-meta z-brace z-square z-ts">]</span></span></span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-loop z-ts">for</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">item</span></span> </span></span><span class="z-keyword z-operator z-expression z-of z-ts">of</span> <span class="z-variable z-other z-readwrite z-ts">items</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">index</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">items</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-ts">indexOf</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">item</span><span class="z-meta z-brace z-round z-ts">)</span></span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">output</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-ts">push</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-string z-template z-ts"><span class="z-punctuation z-definition z-string z-template z-begin z-ts">`</span>Item <span class="z-meta z-template z-expression z-ts"><span class="z-punctuation z-definition z-template-expression z-begin z-ts">${</span></span><span class="z-meta z-template z-expression z-ts"><span class="z-meta z-embedded z-line z-ts"><span class="z-variable z-other z-readwrite z-ts">index</span> <span class="z-keyword z-operator z-arithmetic z-ts">+</span> <span class="z-constant z-numeric z-decimal z-ts">1</span></span><span class="z-punctuation z-definition z-template-expression z-end z-ts">}</span></span>: <span class="z-meta z-template z-expression z-ts"><span class="z-punctuation z-definition z-template-expression z-begin z-ts">${</span></span><span class="z-meta z-template z-expression z-ts"><span class="z-meta z-embedded z-line z-ts"><span class="z-variable z-other z-readwrite z-ts">item</span></span><span class="z-punctuation z-definition z-template-expression z-end z-ts">}</span></span><span class="z-punctuation z-definition z-string z-template z-end z-ts">`</span></span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">output</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-ts">join</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-string z-quoted z-double z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">"</span><span class="z-constant z-character z-escape z-ts">\n</span><span class="z-punctuation z-definition z-string z-end z-ts">"</span></span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></code></pre>
+<p>The problem is calling <code>.indexOf</code> inside the loop. The <code>.indexOf</code> function is an
+<strong>O(n)</strong> operation! It works by looping over the array until it finds the target
+element, returning <code>-1</code> if it doesn't. Calling it inside the loop makes the
+overall big O of our <code>buildList</code> function <strong>O(n^2)</strong>!</p>
+<p>To fix this we can loop using an index. Looking up an element in an array by its
+index is <strong>O(1)</strong>, so the overall big O of the function is reduced to <strong>O(n)</strong>.</p>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-storage z-type z-function z-ts">function</span> <span class="z-meta z-definition z-function z-ts"><span class="z-entity z-name z-function z-ts">buildList</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">items</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">output</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span><span class="z-meta z-array z-literal z-ts"> <span class="z-meta z-brace z-square z-ts">[</span><span class="z-meta z-brace z-square z-ts">]</span></span></span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-loop z-ts">for</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">let</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-readwrite z-ts">i</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-constant z-numeric z-decimal z-ts">0</span></span><span class="z-punctuation z-terminator z-statement z-ts">;</span> <span class="z-variable z-other z-readwrite z-ts">i</span> <span class="z-keyword z-operator z-relational z-ts">&lt;</span> <span class="z-variable z-other z-object z-ts">items</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-variable z-property z-ts">length</span><span class="z-punctuation z-terminator z-statement z-ts">;</span> <span class="z-variable z-other z-readwrite z-ts">i</span><span class="z-keyword z-operator z-increment z-ts">++</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">    <span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">output</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-ts">push</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-string z-template z-ts"><span class="z-punctuation z-definition z-string z-template z-begin z-ts">`</span>Item <span class="z-meta z-template z-expression z-ts"><span class="z-punctuation z-definition z-template-expression z-begin z-ts">${</span></span><span class="z-meta z-template z-expression z-ts"><span class="z-meta z-embedded z-line z-ts"><span class="z-variable z-other z-readwrite z-ts">i</span> <span class="z-keyword z-operator z-arithmetic z-ts">+</span> <span class="z-constant z-numeric z-decimal z-ts">1</span></span><span class="z-punctuation z-definition z-template-expression z-end z-ts">}</span></span>: <span class="z-meta z-template z-expression z-ts"><span class="z-punctuation z-definition z-template-expression z-begin z-ts">${</span></span><span class="z-meta z-template z-expression z-ts"><span class="z-meta z-embedded z-line z-ts"><span class="z-variable z-other z-readwrite z-ts">items</span><span class="z-meta z-array z-literal z-ts"><span class="z-meta z-brace z-square z-ts">[</span><span class="z-variable z-other z-readwrite z-ts">i</span><span class="z-meta z-brace z-square z-ts">]</span></span></span><span class="z-punctuation z-definition z-template-expression z-end z-ts">}</span></span><span class="z-punctuation z-definition z-string z-template z-end z-ts">`</span></span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">output</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-ts">join</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-string z-quoted z-double z-ts"><span class="z-punctuation z-definition z-string z-begin z-ts">"</span><span class="z-constant z-character z-escape z-ts">\n</span><span class="z-punctuation z-definition z-string z-end z-ts">"</span></span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></code></pre>
+<p>You can also achieve the same result with JavaScript's <code>items.forEach((item, index) =&gt; ...)</code> method on arrays, or <code>items.entries()</code>.</p>
+<h3 id="caching-intermediate-results"><a class="anchor" href="https://samwho.dev/big-o/#caching-intermediate-results">#</a>
+Caching intermediate results</h3>
+<p>Consider this function to calculate the factorial of a number. A factorial in
+mathematics is written as, e.g., <code>5!</code> to represent <code>5*4*3*2*1</code> or <code>3!</code> to
+represent <code>3*2*1</code>.</p>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-storage z-type z-function z-ts">function</span> <span class="z-meta z-definition z-function z-ts"><span class="z-entity z-name z-function z-ts">factorial</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">n</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-conditional z-ts">if</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">n</span> <span class="z-keyword z-operator z-comparison z-ts">===</span> <span class="z-constant z-numeric z-decimal z-ts">0</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">    <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-constant z-numeric z-decimal z-ts">1</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-variable z-other z-readwrite z-ts">n</span> <span class="z-keyword z-operator z-arithmetic z-ts">*</span> <span class="z-meta z-function-call z-ts"><span class="z-entity z-name z-function z-ts">factorial</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">n</span> <span class="z-keyword z-operator z-arithmetic z-ts">-</span> <span class="z-constant z-numeric z-decimal z-ts">1</span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></code></pre>
+<p>This function has a time complexity of <strong>O(n)</strong>, but most calls to this function
+are going to redo work we've done before. Calling <code>factorial(4)</code> and then
+<code>factorial(5)</code> will mean <code>factorial(4)</code> is calculated twice.</p>
+<p>We can cache the result of each calculation to avoid this redundant work.</p>
+<pre data-lang="javascript" class="language-javascript z-code"><code class="language-javascript" data-lang="javascript"><span class="z-source z-ts"><span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">cache</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-new z-expr z-ts"><span class="z-keyword z-operator z-new z-ts">new</span> <span class="z-entity z-name z-type z-ts">Map</span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-brace z-round z-ts">)</span></span></span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-storage z-type z-function z-ts">function</span> <span class="z-meta z-definition z-function z-ts"><span class="z-entity z-name z-function z-ts">factorial</span></span><span class="z-meta z-parameters z-ts"><span class="z-punctuation z-definition z-parameters z-begin z-ts">(</span><span class="z-variable z-parameter z-ts">n</span><span class="z-punctuation z-definition z-parameters z-end z-ts">)</span></span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-conditional z-ts">if</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">cache</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-dom z-ts">has</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">n</span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">    <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">cache</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-dom z-ts">get</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">n</span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-conditional z-ts">if</span> <span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">n</span> <span class="z-keyword z-operator z-comparison z-ts">===</span> <span class="z-constant z-numeric z-decimal z-ts">0</span><span class="z-meta z-brace z-round z-ts">)</span> <span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">{</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">    <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-constant z-numeric z-decimal z-ts">1</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-meta z-block z-ts">  <span class="z-punctuation z-definition z-block z-ts">}</span></span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-meta z-var z-expr z-ts"><span class="z-storage z-type z-ts">const</span> <span class="z-meta z-var-single-variable z-expr z-ts"><span class="z-meta z-definition z-variable z-ts"><span class="z-variable z-other z-constant z-ts">result</span></span> </span><span class="z-keyword z-operator z-assignment z-ts">=</span> <span class="z-variable z-other z-readwrite z-ts">n</span> <span class="z-keyword z-operator z-arithmetic z-ts">*</span> <span class="z-meta z-function-call z-ts"><span class="z-entity z-name z-function z-ts">factorial</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">n</span> <span class="z-keyword z-operator z-arithmetic z-ts">-</span> <span class="z-constant z-numeric z-decimal z-ts">1</span><span class="z-meta z-brace z-round z-ts">)</span></span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-meta z-function-call z-ts"><span class="z-variable z-other z-object z-ts">cache</span><span class="z-punctuation z-accessor z-ts">.</span><span class="z-support z-function z-dom z-ts">set</span></span><span class="z-meta z-brace z-round z-ts">(</span><span class="z-variable z-other z-readwrite z-ts">n</span><span class="z-punctuation z-separator z-comma z-ts">,</span> <span class="z-variable z-other z-readwrite z-ts">result</span><span class="z-meta z-brace z-round z-ts">)</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts">  <span class="z-keyword z-control z-flow z-ts">return</span> <span class="z-variable z-other z-readwrite z-ts">result</span><span class="z-punctuation z-terminator z-statement z-ts">;</span>
+</span></span></span><span class="z-source z-ts"><span class="z-meta z-function z-ts"><span class="z-meta z-block z-ts"><span class="z-punctuation z-definition z-block z-ts">}</span></span></span>
+</span></code></pre>
+<p>This makes use of the <strong>O(1)</strong> time complexity for lookups in a <code>Map</code>.  It
+doesn't change the worst case time complexity of the <code>factorial</code> function, but
+it does make the average case faster at the cost of increased memory usage.</p>
+<s-dog position="right" name="sage" mode="caution" class="dog right"><blockquote role="complementary" aria-label="An aside styled as a speech bubble coming from a dog."><img src="./Big O_files/caution.svg" alt="A picture of an old husky dog, with a concerned facial expression" draggable="false" style="cursor: grab; width: 100px; height: 180px; min-width: 100px;"><p>
+  When it comes to performance, remember that you can't ever take what you read
+  online at face value. <b>Always test your code</b> before and after changes
+  to make sure you're actually improving it!
+</p></blockquote></s-dog>
+<h2 id="conclusion"><a class="anchor" href="https://samwho.dev/big-o/#conclusion">#</a>
+Conclusion</h2>
+<p>Let's recap what we've learned:</p>
+<ul>
+<li>Big O notation describes the <strong>relationship between a function's input and
+its wall-clock time</strong>.</li>
+<li>From slowest growth to fastest growth we saw examples of:
+<ul>
+<li><strong>O(1)</strong>, constant time (best!)</li>
+<li><strong>O(log n)</strong>, logarithmic time</li>
+<li><strong>O(n)</strong>, linear time</li>
+<li><strong>O(n^2)</strong>, quadratic time</li>
+</ul>
+</li>
+<li>We can improve the time complexity of the code we write by making better
+algorithmic choices and avoiding common pitfalls.</li>
+</ul>
+<p>These posts take me a long time to write, and they wouldn't be possible without
+the support of my family, friends, sponsors, and reviewers. I'm so grateful to
+all of you—you know who you are—for making it possible for me to make these.</p>
+<p>If you enjoyed this post, I've written a bunch more similar that you can find <a href="https://samwho.dev/">on my homepage</a>. I also love hearing from folks that have questions
+or feedback, you can reach me via <a href="mailto:big-o@samwho.dev">email</a>,
+on <a href="https://bsky.app/profile/samwho.dev">Bluesky</a>, or anonymously via
+my <a href="https://samwho.dev/ping">silly little ping service</a>.</p>
+<p>I'll leave you with one last graph comparing all of the time complexities we
+covered in this post.</p>
+<s-graph id="final" style="width: 100%; aspect-ratio: 2/1;" drawupto="0" role="figure" aria-label="A graph showing the lines: O(1), constant, O(log n), logarithmic, O(n), linear, O(n^2), quadratic">
+  <legend position="top-left" role="none">
+  <axes>
+    <x tics="10" ticformat="tic.toFixed(0)" max="50">
+    <y tics="10" ticformat="tic.toFixed(0)" max="50">
+  </y></x></axes>
+  <lines>
+    <line label="O(1), constant" y="1" role="none">
+    <line label="O(log n), logarithmic" y="Math.log(x) / Math.log(2)" role="none">
+    <line label="O(n), linear" y="x" role="none">
+    <line label="O(n^2), quadratic" y="Math.pow(x, 2)" role="none">
+  </line></line></line></line></lines>
+</legend><canvas width="748" height="374" style="width: 748px; height: 374px;"></canvas></s-graph>
+<input aria-label="A slider for controlling the graph lines" style="margin-bottom: 2rem;" type="range" value="0" min="0" max="50" step="any" oninput="
+    document.getElementById(&#39;final&#39;).setAttribute(&#39;drawupto&#39;, value)
+  ">
+
+
+    </main>
+</article>
+
+<footer class="newsletter-footer">
+    
+    <img style="border-radius: 50%; margin-bottom: 0.5rem" src="./Big O_files/me.58b16fcf4bb14295.jpg" alt="Sam Rose">
+    <div style="display: flex; gap: 0.5em;">
+        <a href="https://twitter.com/samwhoo" target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_260_538)">
+                    <path d="M23.2245 5.78963C22.4373 6.13838 21.591 6.37087 20.6981 6.48075C21.606 5.94187 22.3042 5.08238 22.632 4.06688C21.7826 4.56488 20.8417 4.9305 19.8405 5.12325C19.041 4.27575 17.9006 3.75 16.6372 3.75C14.2102 3.75 12.2433 5.7 12.2433 8.10413C12.2433 8.44425 12.2831 8.77575 12.3581 9.0975C8.70708 8.91412 5.46895 7.17863 3.30258 4.54463C2.92195 5.18813 2.70783 5.94187 2.70783 6.73725C2.70783 8.24887 3.48183 9.57937 4.66195 10.3635C3.94158 10.3414 3.26358 10.1411 2.66995 9.81975C2.66995 9.83288 2.66995 9.85238 2.66995 9.87075C2.66995 11.9831 4.18495 13.7419 6.19308 14.1424C5.82595 14.2429 5.4382 14.2987 5.03845 14.2987C4.75458 14.2987 4.4782 14.2665 4.21045 14.2185C4.76958 15.9446 6.39183 17.2065 8.3137 17.2436C6.80995 18.4095 4.9162 19.1077 2.8567 19.1077C2.50083 19.1077 2.1532 19.0875 1.80933 19.0459C3.75445 20.2778 6.06483 21 8.5447 21C16.6256 21 21.0461 14.364 21.0461 8.60737C21.0461 8.41875 21.0401 8.23088 21.0311 8.04525C21.894 7.43625 22.6372 6.6675 23.2245 5.78963Z" fill="#1DA1F2"></path>
+                </g>
+                <defs>
+                    <clippath id="clip0_260_538">
+                        <rect width="24" height="24" fill="white"></rect>
+                    </clippath>
+                </defs>
+            </svg>
+        </a>
+        <a href="https://bsky.app/profile/samwho.dev" target="_blank">
+            <img src="./Big O_files/bluesky.svg" style="width: 20px; height: 20px; transform: translateY(2px);">
+        </a>
+    </div>
+
+    <p>
+        Enjoyed this post? Consider subscribing to get updates about new posts
+        via email!
+    </p>
+    <p style="margin-bottom: 1em;">
+        Alternatively, you can <a href="https://samwho.dev/rss.xml">subscribe via RSS</a>.
+    </p>
+    <form action="https://buttondown.email/api/emails/embed-subscribe/samwho" method="post" target="popupwindow" onsubmit="window.open(&#39;https://buttondown.email/samwho&#39;, &#39;popupwindow&#39;)" class="embeddable-buttondown-form">
+        <input type="email" name="email" id="bd-email" placeholder="your@email.address">
+        <input type="submit" value="Subscribe">
+        <p>
+            <a href="https://buttondown.email/refer/samwho" target="_blank">powered by buttondown</a>
+        </p>
+    </form>
+</footer>
+
+
+
+</body></html>
