@@ -1,0 +1,64 @@
+/* -------------------- s-debugger -------------------- */
+
+s-debugger {
+    --padding: 1rem;
+}
+
+s-debugger pre {
+    background-color: #272822;
+    color: #f8f8f2;
+    margin: 0;
+    padding: 0;
+}
+
+s-debugger pre code .line.selected {
+    background-color: color-mix(in srgb, var(--palette-grey), white 10%);
+    animation: flash 0.2s ease-out;
+}
+
+
+@keyframes flash {
+  0% {
+    filter: brightness(1.8);
+  }
+
+  100% {
+    filter: brightness(1);
+  }
+}
+
+s-debugger pre code {
+  display: block;
+  width: 100%;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+s-debugger pre code .line:first-of-type {
+  margin-top: var(--padding);
+}
+
+s-debugger pre code .line:last-of-type {
+  margin-bottom: var(--padding);
+}
+
+s-debugger pre code .line {
+  display: inline-block;
+  line-height: 1.5;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  width: 100%;
+  min-width: 100%;
+}
+
+s-debugger .debugger-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: color-mix(in srgb, var(--palette-grey), white 20%);
+  color: white;
+  font-family: var(--code-font);
+  z-index: 1000;
+  border-radius: 1rem;
+  padding: 1rem;
+}

@@ -1,0 +1,106 @@
+/* -------------------- main -------------------- */
+:root {
+  --background-color: #ffffff;
+  --background-highlight: #eceff4;
+  --color: #2e3440;
+  --color-highlight: #4c566a;
+  --footer-background-color: var(--background-highlight);
+
+  --button-color: #25272a;
+  --button-text-color: #ffffff;
+  --button-hover-color: color-mix(in srgb, var(--button-color), white 10%);
+  --button-disabled-color: color-mix(in srgb, var(--button-color), white 30%);
+  --button-border-radius: 8px;
+
+  /* Fonts selected from https: //modernfontstacks.com/ */
+  --code-font: ui-monospace,
+    'Cascadia Code',
+    'Source Code Pro',
+    Menlo,
+    Consolas,
+    'DejaVu Sans Mono',
+    monospace;
+
+  --heading-font: 'Iowan Old Style',
+    'Palatino Linotype',
+    'URW Palladio L',
+    P052,
+    serif;
+
+  --body-font: Seravek,
+    'Gill Sans Nova',
+    Ubuntu,
+    Calibri,
+    'DejaVu Sans',
+    source-sans-pro,
+    sans-serif;
+
+  --palette-1: #e69f00;
+  --palette-2: #56b4e9;
+  --palette-3: #009e73;
+  --palette-4: #f0e442;
+  --palette-5: #0072b2;
+  --palette-6: #d55e00;
+  --palette-7: #cc79a7;
+  --palette-8: #2e3440;
+
+  --palette-orange: var(--palette-1);
+  --palette-blue: var(--palette-2);
+  --palette-green: var(--palette-3);
+  --palette-yellow: var(--palette-4);
+  --palette-dark-blue: var(--palette-5);
+  --palette-red: var(--palette-6);
+  --palette-pink: var(--palette-7);
+  --palette-grey: var(--palette-8);
+
+  --link-color: color-mix(in srgb, var(--palette-blue), black 10%);
+  --link-visited-color: color-mix(in srgb, var(--palette-blue), black 40%);
+  --anchor-color: #d08770;
+
+  --pride-1: #e40303;
+  --pride-2: #ff8c00;
+  --pride-3: #ffed00;
+  --pride-4: #008026;
+  --pride-5: #004dff;
+  --pride-6: #750787;
+
+  --top-bar-1: #4ba69d;
+  --top-bar-2: #a0d9d3;
+  --top-bar-3: #f29e38;
+  --top-bar-4: #f27405;
+  --top-bar-5: #bf4904;
+
+  --dog-speech-bubble-color: var(--background-highlight);
+
+  --max-width: 780px;
+}
+/* ---------------------------------------- */
+
+:root {
+  view-transition-name: none;
+}
+
+::view-transition {
+  pointer-events: none;
+}
+
+/* -------------------- debugger-container -------------------- */
+
+.debugger-container {
+    --padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+    background-color: black;
+    padding: var(--padding);
+    border-radius: calc(1rem + var(--padding));
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    box-shadow: 0px 0px 5px 1px rgba(46, 52, 64, 0.5);
+}
+
+.debugger-container pre {
+    border-top-left-radius: var(--button-border-radius);
+    border-top-right-radius: var(--button-border-radius);
+}
