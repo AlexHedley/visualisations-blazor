@@ -23,7 +23,8 @@ Need to run the **http.server** to allow for `code-worker.js` to run locally.
 
 Individual code files for review
 
-- 📂[code](code/)
+- 📂[code](code/README.md)
+  - [BubbleSortViewer.ts](code/BubbleSortViewer.ts)
   - [Debugger.ts](code/Debugger.ts)
   - [DebuggerControls.ts](code/DebuggerControls.ts)
 
