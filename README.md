@@ -11,6 +11,8 @@ Visualisations from [samwho](https://samwho.dev/) converted from TypeScript to C
 
 ## Original
 
+- [Info](original/README.md)
+
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 Big O
